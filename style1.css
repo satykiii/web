@@ -1,0 +1,665 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #0c0b16;
+    --surface: #171626;
+    --text: #ffffff;
+    --muted: #aaa8bd;
+    --primary: #a78bfa;
+    --secondary: #7c3aed;
+    --border: #302d43;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Light Theme */
+body.light-theme {
+    --background: #f7f6fc;
+    --surface: #ffffff;
+    --text: #191526;
+    --muted: #666477;
+    --primary: #7c3aed;
+    --secondary: #6d28d9;
+    --border: #e3dff0;
+}
+
+/* Navbar */
+.navbar {
+    min-height: 80px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.nav-btn, .primary-btn {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-btn:hover, .primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #7c3aed44;
+}
+
+/* Hero */
+.hero {
+    min-height: 620px;
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.tag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-content > p {
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    padding: 12px 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 55px;
+}
+
+.hero-stats h3 {
+    font-size: 25px;
+    color: var(--primary);
+}
+
+.hero-stats p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 25px;
+    left: -30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px #0003;
+}
+
+.floating-card > span {
+    color: var(--primary);
+    font-size: 25px;
+}
+
+.floating-card strong, .floating-card small {
+    display: block;
+}
+
+.floating-card small {
+    color: var(--muted);
+}
+
+/* Countdown */
+.countdown-section {
+    margin: 0 8%;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.countdown-section h2 {
+    margin: 8px 0;
+}
+
+.countdown-section p {
+    color: var(--muted);
+}
+
+.countdown {
+    display: flex;
+    gap: 15px;
+}
+
+.countdown div {
+    min-width: 75px;
+    padding: 12px;
+    text-align: center;
+    background: var(--background);
+    border-radius: 10px;
+}
+
+.countdown strong, .countdown span {
+    display: block;
+}
+
+.countdown strong {
+    font-size: 25px;
+    color: var(--primary);
+}
+
+.countdown span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Events */
+.events-section {
+    padding: 100px 8%;
+}
+
+.section-heading h2, .about-content h2,
+.registration-info h2, .contact-section h2 {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.filter-container input, .filter-container select {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 14px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.filter-container input {
+    flex: 1;
+}
+
+.filter-container input:focus,
+.filter-container select:focus {
+    border-color: var(--primary);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.event-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px #0003;
+}
+
+.event-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.event-card-content {
+    padding: 20px;
+}
+
+.event-category {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.event-card h3 {
+    font-size: 19px;
+    margin: 10px 0;
+}
+
+.event-meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.event-card-content > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.details-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 9px 15px;
+    border-radius: 7px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.details-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.no-events {
+    color: var(--muted);
+    text-align: center;
+    padding: 30px;
+}
+
+/* About */
+.about-section {
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: var(--surface);
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-content p {
+    color: var(--muted);
+    margin: 20px 0 30px;
+}
+
+/* Registration */
+.registration-section {
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.registration-info p {
+    color: var(--muted);
+    max-width: 400px;
+}
+
+.registration-form {
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.registration-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.registration-form label {
+    display: block;
+    margin: 15px 0 7px;
+    font-size: 14px;
+}
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 13px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--text);
+    outline: none;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+    border-color: var(--primary);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-message.success {
+    color: #22c55e;
+}
+
+.form-message.error {
+    color: #ef4444;
+}
+
+/* Contact */
+.contact-section {
+    text-align: center;
+    padding: 75px 20px;
+    background: var(--surface);
+}
+
+.contact-section p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/* Modal */
+.event-modal {
+    width: min(550px, 92%);
+    max-height: 90vh;
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--surface);
+    color: var(--text);
+    overflow: auto;
+}
+
+.event-modal::backdrop {
+    background: #000b;
+    backdrop-filter: blur(5px);
+}
+
+.event-modal > img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.modal-content {
+    padding: 25px;
+}
+
+.modal-content h2 {
+    margin: 10px 0;
+}
+
+.modal-content p {
+    color: var(--muted);
+    margin: 10px 0;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #171626dd;
+    color: white;
+    font-size: 25px;
+}
+
+/* Footer */
+footer {
+    padding: 30px 8%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        gap: 35px;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-section, .registration-section {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 60px 5%;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+    .floating-card {
+        left: 10px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+    }
+
+    .countdown-section {
+        margin: 0 5%;
+        padding: 25px 15px;
+    }
+
+    .countdown {
+        width: 100%;
+        gap: 7px;
+    }
+
+    .countdown div {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 5px;
+    }
+
+    .countdown strong {
+        font-size: 20px;
+    }
+
+    .events-section {
+        padding: 70px 5%;
+    }
+
+    .section-heading h2, .about-content h2,
+    .registration-info h2, .contact-section h2 {
+        font-size: 28px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section, .registration-section {
+        padding: 65px 5%;
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form {
+        padding: 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

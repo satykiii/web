@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify - Discover Events</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">Event<span>ify.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">☀</button>
+            <a href="#events" class="nav-btn">Explore Events</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">DISCOVER • CONNECT • EXPERIENCE</span>
+            <h1>Make Every Moment<br> <span>Unforgettable.</span></h1>
+            <p>
+                Discover exciting events, connect with amazing people
+                and create memories that last forever.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#events" class="primary-btn">Explore Events →</a>
+                <a href="#about" class="secondary-btn">Learn More</a>
+            </div>
+
+            <div class="hero-stats">
+                <div><h3>50+</h3><p>Events</p></div>
+                <div><h3>10K+</h3><p>Attendees</p></div>
+                <div><h3>20+</h3><p>Organizers</p></div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=900"
+                alt="Live music event">
+            <div class="floating-card">
+                <span>✦</span>
+                <div>
+                    <strong>Unforgettable Experiences</strong>
+                    <small>Find your next adventure</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+        <div>
+            <span class="tag">COMING SOON</span>
+            <h2>Next Big Event</h2>
+            <p>Get ready for an amazing experience!</p>
+        </div>
+
+        <div class="countdown">
+            <div><strong id="days">00</strong><span>Days</span></div>
+            <div><strong id="hours">00</strong><span>Hours</span></div>
+            <div><strong id="minutes">00</strong><span>Minutes</span></div>
+            <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="section-heading">
+            <div>
+                <span class="tag">FIND YOUR EXPERIENCE</span>
+                <h2>Upcoming Events</h2>
+                <p>Explore events and discover something exciting.</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search events..."
+                aria-label="Search events">
+
+            <select id="categoryFilter" aria-label="Filter by category">
+                <option value="All">All Categories</option>
+                <option value="Technology">Technology</option>
+                <option value="Music">Music</option>
+                <option value="Business">Business</option>
+                <option value="Education">Education</option>
+                <option value="Art">Art</option>
+            </select>
+        </div>
+
+        <div class="event-grid" id="eventContainer"></div>
+        <p id="noEvents" class="no-events" hidden>No events found. Try another search.</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900"
+                alt="People enjoying an event">
+        </div>
+
+        <div class="about-content">
+            <span class="tag">ABOUT EVENTIFY</span>
+            <h2>Bringing People Together Through Experiences.</h2>
+            <p>
+                Eventify is your destination for discovering exciting events.
+                From technology conferences to music festivals, find events
+                that inspire, entertain and connect people.
+            </p>
+            <a href="#events" class="primary-btn">Discover Events →</a>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section" id="register">
+        <div class="registration-info">
+            <span class="tag">JOIN THE EXPERIENCE</span>
+            <h2>Register For Your Favourite Event.</h2>
+            <p>
+                Complete the registration form and reserve your place
+                at your favourite event.
+            </p>
+        </div>
+
+        <form id="registrationForm" class="registration-form">
+            <h3>Event Registration</h3>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter 10-digit phone number"
+                   maxlength="10" required>
+
+            <label for="selectedEvent">Select Event</label>
+            <select id="selectedEvent" required>
+                <option value="">Choose an event</option>
+            </select>
+
+            <button type="submit" class="primary-btn submit-btn">
+                Register Now →
+            </button>
+
+            <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <span class="tag">GET IN TOUCH</span>
+        <h2>Have Questions?</h2>
+        <p>We would love to hear from you.</p>
+        <a href="mailto:hello@eventify.com" class="primary-btn">Contact Us</a>
+    </section>
+
+    <!-- Event Details Modal -->
+    <dialog id="eventModal" class="event-modal">
+        <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+        <img id="modalImage" src="" alt="Event image">
+        <div class="modal-content">
+            <span class="tag" id="modalCategory"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDate"></p>
+            <p id="modalVenue"></p>
+            <p id="modalDescription"></p>
+            <button id="modalRegister" class="primary-btn">Register Now →</button>
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="logo">Event<span>ify.</span></a>
+        <p>© 2026 Eventify. All rights reserved.</p>
+        <p>Made with ♥ for unforgettable experiences.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>
